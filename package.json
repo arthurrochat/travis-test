@@ -4,7 +4,7 @@
   "description": "Project to learn travis",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Job succeeded\""
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/arthurrochat/travis-test/issues"
   },
-  "homepage": "https://github.com/arthurrochat/travis-test#readme"
+  "homepage": "https://github.com/arthurrochat/travis-test#readme",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
 }
