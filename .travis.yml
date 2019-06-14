@@ -4,6 +4,10 @@ node_js: 'node'
 cache:
   directories:
     - node_modules
-script:
-  - npm run error
-  - npm run test
+
+jobs:
+  include:
+    - stage: error
+      script: npm run error
+    - stage: test
+      script: npm run test
