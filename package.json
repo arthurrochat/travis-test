@@ -4,7 +4,8 @@
   "description": "Project to learn travis",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "error": "echo \"ERRO\" && exit 1"
   },
   "repository": {
     "type": "git",
