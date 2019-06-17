@@ -1,0 +1,37 @@
+language: node_js
+node_js: 'node'
+
+cache:
+  directories:
+    - node_modules
+
+jobs:
+  include:
+    - stage: error
+      script: npm run error
+    - stage: test
+      script: npm run test
+
+# language: node_js
+# node_js: 'node'
+
+# cache:
+#   directories:
+#     - node_modules
+
+# jobs:
+#   include:
+#     - stage: install
+#       name: 'Npm install and lerna bootstrap'
+#       script:
+#         - npm install
+#         - npm run init
+#     - stage: lint
+#       name: 'Lint'
+#       script: npm run lint
+#     - stage: build
+#       name: 'Build'
+#       script: npm run build
+#     - stage: test
+#       name: 'Test'
+#       script: npm run test:unit
