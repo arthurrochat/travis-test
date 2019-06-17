@@ -7,8 +7,6 @@ cache:
 
 jobs:
   include:
-    - stage: error
-      script: npm run error
     - stage: test
       script: npm run test
 
