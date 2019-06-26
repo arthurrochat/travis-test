@@ -1,6 +1,6 @@
 {
   "name": "travis-test",
-  "version": "0.0.0",
+  "version": "0.1.9",
   "description": "Project to learn travis",
   "main": "index.js",
   "scripts": {
