@@ -5,6 +5,12 @@ cache:
   directories:
     - node_modules
 
+deploy:
+  provider: script
+  script: bash scripts/deploy.sh
+  on:
+    tags: true
+
 jobs:
   include:
     - stage: test
