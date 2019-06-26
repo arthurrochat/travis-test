@@ -5,17 +5,16 @@ cache:
   directories:
     - node_modules
 
-deploy:
-  provider: script
-  script: bash scripts/deploy.sh
-  on:
-    tags: true
-
 jobs:
   include:
     - stage: test
       if: type != push
       script: npm run test
+    - stage: deploy
+      provider: script
+      script: bash scripts/deploy.sh
+      on:
+        tags: true
 
 # language: node_js
 # node_js: 'node'
