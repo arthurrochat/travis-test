@@ -14,7 +14,6 @@ deploy:
 jobs:
   include:
     - stage: test
-      if: type != push
       script: npm run test
 
 # language: node_js
