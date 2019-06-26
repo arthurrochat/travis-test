@@ -1,1 +1,1 @@
-console.log('baza');
+console.log('baz');
