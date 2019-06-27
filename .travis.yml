@@ -8,7 +8,7 @@ cache:
 jobs:
   include:
     - stage: test
-      if: type != push
+      if: type = pull_request
       script: npm run test
     - stage: deploy
       deploy:
