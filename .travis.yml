@@ -16,7 +16,6 @@ jobs:
       if: type = pull_request
       script: npm run test
     - stage: deploy
-      script: echo 'deploying'
       deploy:
         provider: script
         script: bash scripts/deploy.sh

@@ -1,1 +1,1 @@
-console.log('foaa');
+console.log('foa');
