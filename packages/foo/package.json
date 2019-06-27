@@ -1,5 +1,5 @@
 {
-  "name": "foo",
+  "name": "travis-test-foo",
   "version": "0.1.17",
   "description": "",
   "main": "index.js",
@@ -8,5 +8,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "gitHead": "8180caf1df8ca5f82aad2871b8e55866a71018b1"
 }
