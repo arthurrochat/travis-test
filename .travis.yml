@@ -6,7 +6,8 @@ cache:
     - node_modules
 
 stages:
-  - deploy
+  - name: deploy
+    if: tag IS present
   - name: testing
     if: type = pull_request
 
@@ -16,6 +17,8 @@ jobs:
       if: type = pull_request
       script: npm run test
     - stage: deploy
+      if: tag IS present
+      script: echo 'Deploying $TRAVIS_TAG'
       deploy:
         provider: script
         script: bash scripts/deploy.sh
