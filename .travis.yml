@@ -6,17 +6,19 @@ cache:
     - node_modules
 
 stages:
+  - deploy
   - name: testing
     if: type = pull_request
-
-deploy:
-  provider: script
-  script: bash scripts/deploy.sh
-  on:
-    tags: true
 
 jobs:
   include:
     - stage: testing
       if: type = pull_request
       script: npm run test
+    - stage: deploy
+      script: echo 'deploying'
+      deploy:
+        provider: script
+        script: bash scripts/deploy.sh
+        on:
+          tags: true
