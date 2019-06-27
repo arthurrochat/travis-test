@@ -5,6 +5,10 @@ cache:
   directories:
     - node_modules
 
+stages:
+  - name: testing
+    if: branch = master
+
 deploy:
   provider: script
   script: bash scripts/deploy.sh
@@ -16,4 +20,3 @@ jobs:
     - stage: testing
       if: branch = master
       script: npm run test
-    - stage: deploy
