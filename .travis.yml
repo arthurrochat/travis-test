@@ -7,7 +7,7 @@ cache:
 jobs:
   include:
     - stage: testing
-      if: tag IS present
+      if: branch = master
       script: npm run test
     - stage: deploy
       deploy:
