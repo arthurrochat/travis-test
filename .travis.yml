@@ -4,15 +4,10 @@ node_js: 'node'
 cache:
   directories:
     - node_modules
-
-stages:
-  - name: test
-    if: (NOT (tag IS blank))
-  - deploy
-
 jobs:
   include:
-    - stage: test
+    - stage: testing
+      if: tag IS present
       script: npm run test
     - stage: deploy
       deploy:
