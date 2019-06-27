@@ -7,7 +7,7 @@ cache:
 
 stages:
   - name: testing
-    if: branch = master
+    if: type = pull_request
 
 deploy:
   provider: script
@@ -18,5 +18,5 @@ deploy:
 jobs:
   include:
     - stage: testing
-      if: branch = master
+      if: type = pull_request
       script: npm run test
