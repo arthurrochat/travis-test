@@ -7,7 +7,7 @@ cache:
 
 stages:
   - name: test
-    if: type = pull_request
+    if: (NOT type IN (push))
   - deploy
 
 jobs:
