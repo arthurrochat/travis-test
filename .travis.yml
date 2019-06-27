@@ -4,14 +4,16 @@ node_js: 'node'
 cache:
   directories:
     - node_modules
+
+deploy:
+  provider: script
+  script: bash scripts/deploy.sh
+  on:
+    tags: true
+
 jobs:
   include:
     - stage: testing
       if: branch = master
       script: npm run test
     - stage: deploy
-      deploy:
-        provider: script
-        script: bash scripts/deploy.sh
-        on:
-          tags: true
