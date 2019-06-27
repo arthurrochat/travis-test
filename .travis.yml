@@ -7,7 +7,7 @@ cache:
 
 stages:
   - name: test
-    if: (NOT type IN (push))
+    if: (NOT (tag IS blank))
   - deploy
 
 jobs:
@@ -20,27 +20,3 @@ jobs:
         script: bash scripts/deploy.sh
         on:
           tags: true
-
-# language: node_js
-# node_js: 'node'
-
-# cache:
-#   directories:
-#     - node_modules
-
-# jobs:
-#   include:
-#     - stage: install
-#       name: 'Npm install and lerna bootstrap'
-#       script:
-#         - npm install
-#         - npm run init
-#     - stage: lint
-#       name: 'Lint'
-#       script: npm run lint
-#     - stage: build
-#       name: 'Build'
-#       script: npm run build
-#     - stage: test
-#       name: 'Test'
-#       script: npm run test:unit
